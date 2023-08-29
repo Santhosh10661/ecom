@@ -15,7 +15,7 @@ nav {
   height: 8%;
   border-bottom: 1px solid hsl(220, 14%, 75%);
 }
-#menu{
+#menu {
   display: none;
   cursor: pointer;
 }
@@ -50,21 +50,39 @@ a:hover {
   color: hsl(0, 0%, 0%);
   border-bottom: 3px solid hsl(26, 100%, 55%);
 }
-#accContain{
+#accContain {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-evenly;
   width: 10%;
   height: 100%;
 }
 #cartIcon {
-  margin: 0 0.5em;
+  margin: 0;
   cursor: pointer;
+  background: transparent;
 }
 #cartIconSvg:hover {
   fill: hsl(0, 0%, 0%);
 }
-
+#cartIconfield {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+#cartCount {
+  position: absolute;
+  top: 0.5em;
+  font-family: "Kumbh Sans";
+  font-weight: 700;
+  font-size: 12px;
+  width: fit-content;
+  color: hsl(0, 0%, 100%);
+  background: hsl(26, 100%, 55%);
+  padding: 0em 0.6em;
+  margin-left: 0.5em;
+  border-radius: 40%;
+}
 #avatar {
   height: 30px;
   cursor: pointer;
@@ -76,7 +94,7 @@ a:hover {
 #line {
   border-top: 1px solid hsl(220, 14%, 75%);
   width: 100%;
-  margin:  0.5em 0em;
+  margin: 0.5em 0em;
 }
 main {
   display: flex;
@@ -108,7 +126,7 @@ main {
   border-radius: 2%;
 }
 #preForMob,
-#nxtForMob{
+#nxtForMob {
   display: none;
 }
 #otherImg {
@@ -126,7 +144,7 @@ main {
   border-radius: 8%;
 }
 .thumbnailSelected {
-  filter: opacity(70%);  
+  filter: opacity(70%);
   border: 2px solid hsl(26, 100%, 55%);
 }
 #productDetails {
@@ -168,7 +186,7 @@ main {
   height: fit-content;
   margin: 0;
 }
-#currentPrice{
+#currentPrice {
   display: flex;
 }
 #offer {
@@ -200,7 +218,6 @@ main {
   padding: 2px;
   background: hsl(216, 9%, 90%);
   border-radius: 4px;
-  
 }
 #Qty svg {
   width: fit-content;
@@ -246,33 +263,28 @@ main {
   margin: 0px 10px;
   border: 1px solid black;
 }
-/* svg {
-  margin: 0px 10px;
-} */
-
 #selected,
 #thumbnail,
 #lbThumbnail {
   cursor: pointer;
 }
 #cart {
-  /* display: none; */
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
-  top: 10%;
+  top: 7%;
   right: 10%;
   background: white;
   width: 300px;
   height: 180px;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0px 10px 20px 0px hsl(219, 9%, 45%);
+  box-shadow: 0px 10px 20px 0px hsl(214, 5%, 75%);
 }
 #cart span {
   font-weight: 700;
   width: 100%;
-  margin:  1em 0em;
+  margin: 1em 0em;
 }
 #cartedProducts {
   display: flex;
@@ -335,7 +347,6 @@ main {
   justify-content: center;
   align-items: center;
   background: hsl(0, 0%, 0%, 75%);
-  
 }
 #manage {
   width: fit-content;
@@ -344,7 +355,7 @@ main {
 #pre {
   position: absolute;
   top: 40%;
-  padding:10px;
+  padding: 10px;
   background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
 }
@@ -352,16 +363,16 @@ main {
   position: absolute;
   top: 40%;
   left: 63%;
-  padding:10px;
+  padding: 10px;
   background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
 }
 #preSvg,
-#nxtSvg{
+#nxtSvg {
   cursor: pointer;
 }
 #preSvg:hover,
-#nxtSvg:hover{
+#nxtSvg:hover {
   stroke: hsl(26, 100%, 55%);
 }
 #closeBtnSvg {
@@ -369,7 +380,7 @@ main {
   top: 0;
   left: 93%;
 }
-#closeBtn{
+#closeBtn {
   cursor: pointer;
 }
 #closeBtn:hover {
@@ -386,22 +397,19 @@ main {
   max-width: 300px;
   justify-content: space-between;
   margin: 0.5em;
-  /* background: hsl(0, 0%, 100%,100%) ; */
 }
 #lbThumbnail {
   width: 100%;
   max-width: 60px;
   border-radius: 8%;
 }
-.lbThumbnailSelected{
-  /* background: hsl(0, 0%, 100%,75%); */
-  
-  filter: opacity(70%);  
+.lbThumbnailSelected {
+  filter: opacity(70%);
   border: 2px solid hsl(26, 100%, 55%);
   width: 100%;
   max-width: 60px;
   border-radius: 8%;
 }
-#menuList{
-  display: none; 
+#menuList {
+  display: none;
 }
