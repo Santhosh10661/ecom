@@ -28,7 +28,7 @@
     height: max-content;
   }
   #cartCount {
-    top: 0.1em;
+    top: 1%;
   }
   main {
     flex-direction: column;
