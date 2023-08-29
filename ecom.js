@@ -78,10 +78,13 @@ function deleteProduct() {
   let cartedProducts = document.querySelector("#cartedProducts");
   let cartProduct = document.querySelector(".cartProduct");
   let checkout = document.querySelector(".checkout");
+  let qtySelected = document.querySelector("#qtyCount").value;
+  let cartCount = document.querySelector("#cartCount");
   cartProduct.remove();
   checkout.remove();
   cartedProducts.innerHTML = `<p>your cart is empty</p>`;
   qty = 0;
+  cartCount.innerHTML = qty;
   updateQtyCount();
 }
 
