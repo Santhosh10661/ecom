@@ -7,7 +7,6 @@ let selected = document.querySelector("#selected");
 let closeBtn = document.querySelector("#closeBtn");
 let cartBox = document.querySelector("#cartIconSvg");
 
-
 let qty = 0;
 
 qtyMinus.addEventListener("click", () => {
@@ -30,8 +29,8 @@ addToCartBtn.addEventListener("click", checkCart);
 function checkCart() {
   let product = this.parentElement.parentElement;
   let cartedProducts = document.querySelector("#cartedProducts");
-    cartedProducts.innerHTML = "";
-    addToCart(product);
+  cartedProducts.innerHTML = "";
+  addToCart(product);
 }
 
 function addToCart(product) {
@@ -40,6 +39,7 @@ function addToCart(product) {
   let qtySelected = product.querySelector("#qtyCount").value;
   let thumbnail = document.querySelector(".thumbImg-1").src;
   let cartedProducts = document.querySelector("#cartedProducts");
+  let cartCount = document.querySelector("#cartCount");
   let cart = document.querySelector("#cart");
 
   let replace = parseFloat(ProductPrice.replace("$", ""));
@@ -70,6 +70,7 @@ function addToCart(product) {
     <button class="checkout">checkout</button>`;
   cartedProducts.append(cartProduct);
   cartProduct.classList.add("cartProduct");
+  cartCount.innerHTML = qtySelected;
   updateQtyCount();
 }
 
@@ -87,9 +88,6 @@ function deleteProduct() {
 selected.addEventListener("click", () => (lb.style.display = "flex"));
 closeBtn.addEventListener("click", () => (lb.style.display = "none"));
 
-
-
-
 let preBtn = document.querySelector("#preSvg");
 let nxtBtn = document.querySelector("#nxtSvg");
 let curImg = 1;
@@ -97,38 +95,52 @@ let curImg = 1;
 preBtn.addEventListener("click", () => {
   if (curImg === 1) {
     document.querySelector(`.lbImg-${curImg}`).style.display = "none";
-    document.querySelector(`.lbThumbImg-${curImg}`).classList.remove('lbThumbnailSelected');
+    document
+      .querySelector(`.lbThumbImg-${curImg}`)
+      .classList.remove("lbThumbnailSelected");
     curImg = 4;
     document.querySelector(`.lbImg-${curImg}`).style.display = "flex";
-    document.querySelector(`.lbThumbImg-${curImg}`).classList.add('lbThumbnailSelected');
+    document
+      .querySelector(`.lbThumbImg-${curImg}`)
+      .classList.add("lbThumbnailSelected");
   } else {
     document.querySelector(`.lbImg-${curImg}`).style.display = "none";
-    document.querySelector(`.lbThumbImg-${curImg}`).classList.remove('lbThumbnailSelected');
+    document
+      .querySelector(`.lbThumbImg-${curImg}`)
+      .classList.remove("lbThumbnailSelected");
     curImg--;
     document.querySelector(`.lbImg-${curImg}`).style.display = "flex";
-    document.querySelector(`.lbThumbImg-${curImg}`).classList.add('lbThumbnailSelected');
+    document
+      .querySelector(`.lbThumbImg-${curImg}`)
+      .classList.add("lbThumbnailSelected");
   }
 });
 
 nxtBtn.addEventListener("click", () => {
   if (curImg < 4) {
     document.querySelector(`.lbImg-${curImg}`).style.display = "none";
-    document.querySelector(`.lbThumbImg-${curImg}`).classList.remove('lbThumbnailSelected');
+    document
+      .querySelector(`.lbThumbImg-${curImg}`)
+      .classList.remove("lbThumbnailSelected");
     curImg++;
     document.querySelector(`.lbImg-${curImg}`).style.display = "flex";
-    document.querySelector(`.lbThumbImg-${curImg}`).classList.add('lbThumbnailSelected');
+    document
+      .querySelector(`.lbThumbImg-${curImg}`)
+      .classList.add("lbThumbnailSelected");
   } else {
     document.querySelector(`.lbImg-${curImg}`).style.display = "none";
-    document.querySelector(`.lbThumbImg-${curImg}`).classList.remove('lbThumbnailSelected');
+    document
+      .querySelector(`.lbThumbImg-${curImg}`)
+      .classList.remove("lbThumbnailSelected");
     curImg = 1;
     document.querySelector(`.lbImg-${curImg}`).style.display = "flex";
-    document.querySelector(`.lbThumbImg-${curImg}`).classList.add('lbThumbnailSelected');
+    document
+      .querySelector(`.lbThumbImg-${curImg}`)
+      .classList.add("lbThumbnailSelected");
   }
 });
 
-
-
-let thumbnail = document.querySelectorAll("#thumbnail")
+let thumbnail = document.querySelectorAll("#thumbnail");
 thumbnail.forEach((img) => {
   img.addEventListener("click", getThumbImg);
 });
@@ -141,9 +153,9 @@ function getThumbImg() {
   selected.forEach((img) => (img.style.display = "none"));
   document.querySelector(`.img-${thumbNo}`).style.display = "flex";
 
-  let alreadyThumbSel = document.querySelectorAll('.thumbnailSelected')
-  alreadyThumbSel.forEach((sel)=>sel.classList.remove('thumbnailSelected'))
-  thumbnailselected.classList.add("thumbnailSelected")
+  let alreadyThumbSel = document.querySelectorAll(".thumbnailSelected");
+  alreadyThumbSel.forEach((sel) => sel.classList.remove("thumbnailSelected"));
+  thumbnailselected.classList.add("thumbnailSelected");
 }
 
 let lbThumbnail = document.querySelectorAll("#lbThumbnail");
@@ -159,9 +171,11 @@ function getLbThumbImg() {
   lbSelected.forEach((img) => (img.style.display = "none"));
   document.querySelector(`.lbImg-${thumbNo}`).style.display = "flex";
 
-  let alreadyLbThumbSel = document.querySelectorAll('.lbThumbnailSelected')
-  alreadyLbThumbSel.forEach((sel)=>sel.classList.remove('lbThumbnailSelected'))
-  lbThumbnailselected.classList.add("lbThumbnailSelected")
+  let alreadyLbThumbSel = document.querySelectorAll(".lbThumbnailSelected");
+  alreadyLbThumbSel.forEach((sel) =>
+    sel.classList.remove("lbThumbnailSelected")
+  );
+  lbThumbnailselected.classList.add("lbThumbnailSelected");
 }
 
 cartBox.addEventListener("click", cartActive);
@@ -174,19 +188,16 @@ function cartActive() {
   }
 }
 
-
-let menuIcon = document.querySelector('#menu')
-menuIcon.addEventListener('click',()=>{
-  let menuList = document.querySelector('#menuList')
-  menuList.style.display="flex"
-})
-let menuClose = document.querySelector('#menuclose')
-menuClose.addEventListener('click',()=>{
-  let menuList = document.querySelector('#menuList')
-  menuList.style.display="none"
-})
-
-
+let menuIcon = document.querySelector("#menu");
+menuIcon.addEventListener("click", () => {
+  let menuList = document.querySelector("#menuList");
+  menuList.style.display = "flex";
+});
+let menuClose = document.querySelector("#menuclose");
+menuClose.addEventListener("click", () => {
+  let menuList = document.querySelector("#menuList");
+  menuList.style.display = "none";
+});
 
 let preBtnForMob = document.querySelector("#preSvgForMob");
 let nxtBtnForMob = document.querySelector("#nxtSvgForMob");
@@ -194,7 +205,7 @@ let curImgForMob = 1;
 
 preBtnForMob.addEventListener("click", () => {
   if (curImgForMob === 1) {
-    document.querySelector(`.img-${curImgForMob}`).style.display = "none";    
+    document.querySelector(`.img-${curImgForMob}`).style.display = "none";
     curImgForMob = 4;
     document.querySelector(`.img-${curImgForMob}`).style.display = "flex";
   } else {
